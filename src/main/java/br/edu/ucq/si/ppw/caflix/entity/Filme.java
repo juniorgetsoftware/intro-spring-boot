@@ -1,5 +1,6 @@
 package br.edu.ucq.si.ppw.caflix.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -33,12 +34,19 @@ public class Filme {
 	@NonNull
 	@ToString.Include
 	@JsonProperty("nome")
+	@Column(name = "nome")
 	private String nome;
 
 	@JsonProperty("ano")
+	@Column(name = "ano")
 	private Integer ano;
 
+	@JsonProperty("sinopse")
+	@Column(name = "sinopse", length = 2500)
+	private String sinopse;
+
 	@JsonProperty("url_capa")
+	@Column(name = "url_capa")
 	private String urlCapa;
 
 }
