@@ -32,6 +32,12 @@ public class FilmeResource {
 		return filmes.findAll();
 	}
 
+	@GetMapping("/{id}")
+	@ResponseStatus(value = HttpStatus.CREATED)
+	public Filme filmePorId(@PathVariable Long id) {
+		return filmes.findById(id);
+	}
+
 	@PostMapping
 	public ResponseEntity<Filme> cadastrar(@RequestBody Filme filme) {
 		return ResponseEntity.ok(filmes.save(filme));
