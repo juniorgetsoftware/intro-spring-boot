@@ -19,7 +19,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import lombok.NonNull;
 import lombok.ToString;
 
 @Table(name = "filme")
@@ -36,7 +35,6 @@ public class Filme {
 	@JsonProperty("id")
 	private Long id;
 
-	@NonNull
 	@ToString.Include
 	@JsonProperty("nome")
 	@Column(name = "nome")
