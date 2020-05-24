@@ -54,7 +54,8 @@ public class Filme {
 
 	@JsonProperty("url_capa")
 	@Column(name = "url_capa")
-	@URL(message = "Não é um formato de URL válido")
+	@URL(message = "Não é um formato válido de Url")
+	@NotNull(message = "Url da capa não pode ser nulo")
 	private String urlCapa;
 
 }
