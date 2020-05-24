@@ -2,6 +2,8 @@ package br.edu.ucq.si.ppw.caflix.resource;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -39,7 +41,7 @@ public class FilmeResource {
 	}
 
 	@PostMapping
-	public ResponseEntity<Filme> cadastrar(@RequestBody Filme filme) {
+	public ResponseEntity<Filme> cadastrar(@Valid @RequestBody Filme filme) {
 		return ResponseEntity.ok(filmes.save(filme));
 	}
 
@@ -50,7 +52,7 @@ public class FilmeResource {
 	}
 
 	@PutMapping("/{id}")
-	public ResponseEntity<Filme> editar(@PathVariable Long id, @RequestBody Filme filme) {
+	public ResponseEntity<Filme> editar(@PathVariable Long id, @Valid @RequestBody Filme filme) {
 		Filme atualizado = filmes.update(id, filme);
 		return ResponseEntity.ok(atualizado);
 	}
